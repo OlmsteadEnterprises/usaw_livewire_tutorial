@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Livewire\Category;
 
 Route::get('/', function () {
     return view('welcome');
@@ -14,4 +15,8 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::prefix('/categories')->name('categories.view.')->middleware(['auth', 'verified'])->group(function () {
+        Route::get('/', [Category::class, 'render'])->name('index');
+    });
 });
