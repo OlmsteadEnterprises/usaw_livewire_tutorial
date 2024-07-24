@@ -34,6 +34,8 @@
 
             <!-- Page Content -->
             <main>
+{{--                <livewire:hello-world />--}}
+                <livewire:counter />
                 {{ $slot }}
             </main>
         </div>

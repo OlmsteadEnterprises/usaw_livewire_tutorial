@@ -17,6 +17,6 @@ Route::middleware([
     })->name('dashboard');
 
     Route::prefix('/categories')->name('categories.view.')->middleware(['auth', 'verified'])->group(function () {
-        Route::get('/', [Category::class, 'render'])->name('index');
+        Route::get('/', Category::class)->name('index');
     });
 });
