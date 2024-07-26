@@ -2,8 +2,10 @@
 
 namespace App\Livewire;
 
+use Livewire\Attributes\Title;
 use Livewire\Component;
 
+#[Title('Counter')]
 class Counter extends Component
 {
     public $count = 1;
@@ -18,6 +20,16 @@ class Counter extends Component
     public function add() {
         $this->toDos[] = $this->todo;
         $this->reset('todo');
+    }
+    public function updated($property, $value) {
+        $this->$property = strtoupper($value);
+    }
+
+    public function updatedToDo($value) {
+        $this->todo = strtoupper($value);
+    }
+    public function mount() {
+
     }
     public function render()
     {

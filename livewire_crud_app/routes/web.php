@@ -19,4 +19,8 @@ Route::middleware([
     Route::prefix('/categories')->name('categories.view.')->middleware(['auth', 'verified'])->group(function () {
         Route::get('/', Category::class)->name('index');
     });
+
+    Route::prefix('/counter')->name('counter.view.')->middleware(['auth', 'verified'])->group(function () {
+        Route::get('/', \App\Livewire\Counter::class)->name('index');
+    });
 });
