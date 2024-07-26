@@ -12,17 +12,17 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                    <x-nav-link href="{{ route('dashboard') }}" wire:navigate :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('categories.view.index') }}" :active="request()->routeIs('categories.view.index')">
+                    <x-nav-link href="{{ route('categories.view.index') }}" wire:navigate :active="request()->routeIs('categories.view.index')">
                         {{ __('Categories') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('counter.view.index') }}" :active="request()->routeIs('categories.view.index')">
+                    <x-nav-link href="{{ route('counter.view.index') }}" wire:navigate :active="request()->routeIs('counter.view.index')">
                         {{ __('Counter') }}
                     </x-nav-link>
                 </div>
