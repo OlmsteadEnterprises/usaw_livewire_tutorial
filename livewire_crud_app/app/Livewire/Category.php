@@ -14,11 +14,15 @@ class Category extends Component
             'name' => $this->name,
             'description' => $this->description
         ]);
-
-        return $this->redirect('/categories');
+        $this->reset();
+    }
+    public function delete(CategoryModel $category) {
+        $category->delete();
     }
     public function render()
     {
-        return view('livewire.category')->layout('layouts.app');
+        return view('livewire.category', [
+            'categories' => CategoryModel::all(),
+        ])->layout('layouts.app');
     }
 }
